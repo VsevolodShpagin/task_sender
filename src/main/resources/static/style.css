@@ -1,0 +1,18 @@
+.screenCenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rowCenter {
+    text-align: center;
+}
+
+.spaceBefore {
+    padding-top: 1em;
+}
+
+.inputField {
+    width: 124px;
+}

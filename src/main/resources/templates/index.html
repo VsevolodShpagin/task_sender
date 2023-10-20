@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="sender page">
+    <meta name="author" content="VS">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>Send payment info</title>
+</head>
+
+<body class="screenCenter">
+<h2>Payment</h2>
+<table th:if="${sendPaymentErrors != null}">
+    <tr th:each="error : ${sendPaymentErrors}">
+        <td class="errorText" th:text="${error.message}"></td>
+    </tr>
+</table>
+<table>
+    <form action="/" th:object="${sendPaymentRequest}" method="post">
+        <tr>
+            <td>Payer:</td>
+            <td><input class="inputField" type="text" th:field="${sendPaymentRequest.payer}"/></td>
+        </tr>
+        <tr>
+            <td>Receiver:</td>
+            <td><input class="inputField" type="text" th:field="${sendPaymentRequest.receiver}"/></td>
+        </tr>
+        <tr>
+            <td>Sum:</td>
+            <td><input class="inputField" type="number" th:min="0" th:field="${sendPaymentRequest.sum}"/></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><input class="inputField" type="text" th:field="${sendPaymentRequest.description}"/></td>
+        </tr>
+        <tr class="spaceBefore">
+            <td><input type="submit" value="Send"></td>
+        </tr>
+    </form>
+</table>
+</body>
+
+</html>
