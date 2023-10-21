@@ -27,15 +27,19 @@
             <td><input class="inputField" type="text" th:field="${sendPaymentRequest.receiver}"/></td>
         </tr>
         <tr>
+            <td>Receiver e-mail:</td>
+            <td><input class="inputField" type="email" th:field="${sendPaymentRequest.receiverEMail}"/></td>
+        </tr>
+        <tr>
             <td>Sum:</td>
-            <td><input class="inputField" type="number" th:min="0" th:field="${sendPaymentRequest.sum}"/></td>
+            <td><input class="inputField" type="text" th:min="0" th:field="${sendPaymentRequest.sum}"/></td>
         </tr>
         <tr>
             <td>Description:</td>
             <td><input class="inputField" type="text" th:field="${sendPaymentRequest.description}"/></td>
         </tr>
-        <tr class="spaceBefore">
-            <td><input type="submit" value="Send"></td>
+        <tr>
+            <td class="spaceBefore"><input type="submit" value="Send"></td>
         </tr>
     </form>
 </table>
