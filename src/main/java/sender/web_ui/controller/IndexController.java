@@ -23,10 +23,6 @@ public class IndexController {
             ModelMap modelMap
     ) {
         modelMap.addAttribute("sendPaymentRequest", new SendPaymentRequest());
-        //from session into attr
-        //html gets placeholders from attr
-        //will it fill them in another tab
-        //shouldn't fill in another browser
         return "index";
     }
 
@@ -40,7 +36,6 @@ public class IndexController {
             modelMap.addAttribute("sendPaymentErrors", response.getErrors());
             return "index";
         }
-        //fill session from request
         return "success";
     }
 
