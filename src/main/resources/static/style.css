@@ -16,3 +16,8 @@
 .inputField {
     width: 124px;
 }
+
+.errorText {
+     font-size: 18px;
+     color: red;
+}

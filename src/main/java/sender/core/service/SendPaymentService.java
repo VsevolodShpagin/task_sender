@@ -1,4 +1,10 @@
 package sender.core.service;
 
-public class SendPaymentService {
+import sender.core.request.SendPaymentRequest;
+import sender.core.response.SendPaymentResponse;
+
+public interface SendPaymentService {
+
+    SendPaymentResponse execute(SendPaymentRequest request);
+
 }
