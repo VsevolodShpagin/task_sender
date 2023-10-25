@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="error page">
+    <meta name="author" content="VS">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>Error</title>
+</head>
+
+<body class="screenCenter">
+<table class="rowCenter">
+    <tr>
+        <td><h2>Error!</h2></td>
+    </tr>
+    <tr>
+        <td>Something went wrong.</td>
+    </tr>
+    <tr>
+        <td>We are very sorry.</td>
+    </tr>
+    <tr>
+        <form action="/" method="get">
+            <td class="spaceBefore"><input type="submit" value="Back"/></td>
+        </form>
+    </tr>
+</table>
+</body>
+
+</html>

@@ -31,12 +31,16 @@ public class IndexController {
             @ModelAttribute(value = "sendPaymentRequest") SendPaymentRequest request,
             ModelMap modelMap
     ) {
-        SendPaymentResponse response = sendPaymentService.execute(request);
-        if (response.hasErrors()) {
-            modelMap.addAttribute("sendPaymentErrors", response.getErrors());
-            return "index";
+        try {
+            SendPaymentResponse response = sendPaymentService.execute(request);
+            if (response.hasErrors()) {
+                modelMap.addAttribute("sendPaymentErrors", response.getErrors());
+                return "index";
+            }
+            return "success";
+        } catch (RuntimeException exception) {
+            return "error";
         }
-        return "success";
     }
 
 }
